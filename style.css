@@ -50,14 +50,24 @@ header {
 
     #cartCount {
         position: relative;
+        display: inline-flex;
+        width: 2ch;
+        height: 1.5em;
+        flex: 0 0 2ch;
+        align-items: center;
+        justify-content: flex-end;
+        text-align: right;
+        font-variant-numeric: tabular-nums;
         color: var(--color-bg);
         font-weight: bolder !important;
         font-size: 4vw;
+        visibility: hidden;
     }
 
     .cart-count {
         display: flex;
         flex-direction: row-reverse;
+        justify-content: center;
         align-items: center;
     }
 }

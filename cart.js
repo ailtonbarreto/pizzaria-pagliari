@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function atualizarContador() {
     const total = getCarrinho().reduce((s, i) => s + i.qtd, 0);
     cartCount.textContent = total;
-    cartCount.style.display = total > 0 ? 'inline-flex' : 'none';
+    cartCount.style.visibility = total > 0 ? 'visible' : 'hidden';
   }
 
   atualizarContador();

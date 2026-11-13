@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     cartCount.textContent = total;
 
-    cartCount.style.display = total > 0 ? 'flex' : 'none';
+    cartCount.style.visibility = total > 0 ? 'visible' : 'hidden';
   }
 
   function getCarrinho() {
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
         dadosPorCategoria = {};
 
         res.data.forEach(item => {
-          
+
           if (!item.status || item.status.toLowerCase() !== 'ativo') return;
 
           const categoria = item.categoria || 'Outros';
@@ -137,6 +137,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <h3>${item.nome}</h3>
             <strong>R$ ${item.preco}</strong>
           </div>
+
+
 
           <p>${item.descricao || ''}</p>
 
