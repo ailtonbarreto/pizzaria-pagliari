@@ -212,7 +212,7 @@ button {
   overflow: hidden;
   padding: 72px clamp(24px, 10vw, 150px);
   color: white;
-  background: #37241a url("hero.jpg") center 52% / cover no-repeat;
+  background: #37241a url("./assets/hero.jpg") center 52% / cover no-repeat;
 }
 
 .hero::before {
