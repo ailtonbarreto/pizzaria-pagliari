@@ -1,54 +1,141 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Cardápio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playwrite+NZ+Basic:wght@100..400&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="./pizza.png" type="image/x-icon">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#b83319">
+  <meta name="description" content="Peça pizzas, porções e bebidas da Pizzaria Pagliari.">
+  <title>Pizzaria Pagliari | Sabor que reúne</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0,0"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script defer src="script.js"></script>
 </head>
 
 <body>
+  <header class="site-header">
 
-    <header>
-        <button id="btnAbrir" class="btn-menu">☰</button>
+    <a class="brand" href="index.html" aria-label="Pizzaria Pagliari - início">
+      <img src="Pizza.png" alt="">
+      <span class="brand-name">PAGLIARI<span>PIZZARIA</span></span>
+    </a>
+    <nav class="main-nav" id="category-nav" aria-label="Categorias do cardápio">
+     
+    </nav>
 
-        <h1>🍕 Cardápio Pagliari</h1>
+    <div class="header-actions">
+            <button class="cart-button" id="open-cart" type="button" aria-label="Abrir sacola">
+        <span class="material-symbols-rounded" aria-hidden="true">shopping_bag</span>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-controls="category-nav" aria-expanded="false"
+        aria-label="Abrir menu">
+        <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+      </button>
 
-        <div class="cart-count" >
-            <span id="cartCount">0</span>
-            <span class="material-symbols-outlined" id="cart">shopping_bag</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="Destaque da pizzaria">
+      <div class="hero-content">
+        <!-- <p class="eyebrow">PIZZARIA PAGLIARI</p> -->
+        <h1>Tá liberado<br><em>Sentir fome</em></h1>
+        <p class="hero-copy">Sabor de verdade, ingredientes selecionados e aquele momento gostoso ao redor da mesa.</p>
+        <a class="button button-light" href="#mais-pedidas">Explore o cardápio</a>
+      </div>
+      <div class="delivery-info" aria-label="Informações de entrega">
+        <div class="delivery-item">
+          <span class="material-symbols-rounded" aria-hidden="true" id="helmet">sports_motorsports</span>
+          <p><strong>Taxa de entrega</strong><span>R$ 10,00</span></p>
         </div>
-
-    </header>
-
-    <div id="cart_popup"></div>
-
-    <aside id="sidebar" class="sidebar">
-
-        <button id="btnFechar" class="btn-fechar">
-            <span class="btn-text">Opcões</span>
-            <span class="btn-x">✕</span>
-        </button>
-
-        <div id="menuCategorias" class="menu-categorias">
-
+        <div class="delivery-item">
+          <span class="material-symbols-rounded" aria-hidden="true">schedule</span>
+          <p><strong>Tempo estimado</strong><span>60 min</span></p>
         </div>
+      </div>
+      <a class="scroll-cue" href="#mais-pedidas" aria-label="Desça para as pizzas">
+        <span class="material-symbols-rounded" aria-hidden="true">arrow_downward</span>
+      </a>
+    </section>
 
-    </aside>
+    <section class="menu-section home-products" id="mais-pedidas">
+      <div class="section-heading">
+        <p class="eyebrow">AS QUERIDINHAS DA CASA</p>
+        <h2>Mais pedidas</h2>
+        <p>Sabores que sempre fazem sucesso por aqui.</p>
+      </div>
+      <div id="popular-pizzas" class="product-grid home-product-grid" aria-live="polite">
+        <div class="loading-state"><span class="loader" aria-hidden="true"></span>
+          <p>Preparando o cardápio...</p>
+        </div>
+      </div>
+      <a class="view-all-link" href="categoria.html?categoria=Pizza">Ver todas as pizzas <span
+          class="material-symbols-rounded" aria-hidden="true">arrow_outward</span></a>
+    </section>
 
+    <section class="menu-section home-products home-featured" id="destaques">
+      <div class="section-heading">
+        <p class="eyebrow">ESCOLHAS ESPECIAIS</p>
+        <h2>Destaques</h2>
+        <p>Mais sabores preparados para surpreender.</p>
+      </div>
+      <div id="featured-pizzas" class="product-grid home-product-grid" aria-live="polite">
+        <div class="loading-state"><span class="loader" aria-hidden="true"></span>
+          <p>Preparando o cardápio...</p>
+        </div>
+      </div>
+      <a class="view-all-link" href="categoria.html?categoria=Pizza">Ver todas as pizzas <span
+          class="material-symbols-rounded" aria-hidden="true">arrow_outward</span></a>
+    </section>
 
-    <main class="content">
-        <div id="cards" class="cards"></div>
-    </main>
+    <section class="closing-banner">
+      <div>
+        <p class="eyebrow">BONS MOMENTOS COMEÇAM À MESA</p>
+        <h2>Hoje combina com pizza.</h2>
+      </div>
+      <a class="button button-dark" href="#mais-pedidas">Escolher meu pedido <span class="material-symbols-rounded"
+          aria-hidden="true">arrow_outward</span></a>
+    </section>
+  </main>
 
-    <script src="script.js"></script>
-    <script src="cart.js"></script>
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="index.html" aria-label="Pizzaria Pagliari - início">
+      <img src="Pizza.png" alt="">
+      <span class="brand-name">PAGLIARI<span>PIZZARIA</span></span>
+    </a>
+    <div class="footer-copy">
+      <p>Feito com carinho, servido quentinho.</p><span>© <span id="current-year"></span> Pizzaria Pagliari</span>
+    </div>
+    <a class="back-top material-symbols-rounded" href="#" aria-label="Voltar ao topo">arrow_upward</a>
+  </footer>
+
+  <div class="cart-backdrop" id="cart-backdrop" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-hidden="true">
+    <div class="cart-header">
+      <div>
+        <p class="eyebrow">SEU PEDIDO</p>
+        <h2 id="cart-title">Sacola</h2>
+      </div>
+      <button class="icon-button material-symbols-rounded" id="close-cart" type="button"
+        aria-label="Fechar sacola">close</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Total</span><strong id="cart-total">R$ 0,00</strong></div>
+      <button class="button button-dark checkout-button" id="checkout" type="button" disabled>Continuar pelo WhatsApp
+        <span class="material-symbols-rounded" aria-hidden="true">arrow_outward</span></button>
+      <p class="cart-disclaimer">Seu pedido será enviado para confirmação pelo WhatsApp.</p>
+    </div>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 
 </html>

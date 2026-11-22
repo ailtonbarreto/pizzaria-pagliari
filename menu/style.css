@@ -168,6 +168,7 @@ header {
             }
         }
 
+
     }
 
     textarea {
@@ -418,26 +419,28 @@ header {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    width: 96%;
 }
 
 .card {
     background: var(--color-bg-card);
-    width: 90vw;
+    width: 20vw;
     margin: 10px;
     border-radius: 10px;
     padding: 10px;
     display: flex;
     flex-direction: column;
     box-shadow: 5px 5px 21px 5px rgba(0, 0, 0, 0.56);
+
 }
 
 .card-img {
-    display: none;
+    display: flex;
     justify-content: center;
 }
 
 .card-img img {
-    width: 100%;
+    width: 60%;
     border-radius: 8px;
 }
 
@@ -590,7 +593,7 @@ header {
     }
 
     .card {
-        width: 30vw;
+        width: 25vw;
 
         .card-info {
             display: flex;
