@@ -212,7 +212,7 @@ button {
   overflow: hidden;
   padding: 72px clamp(24px, 10vw, 150px);
   color: white;
-  background: #37241a url("hero.png") center 52% / cover no-repeat;
+  background: #37241a url("hero.jpg") center 52% / cover no-repeat;
 }
 
 .hero::before {
@@ -286,10 +286,6 @@ button {
   vertical-align: middle;
 }
 
-.button-light {
-  background: #f7f0e7;
-  color: var(--ink);
-}
 
 .button-dark {
   background: var(--red);
@@ -302,7 +298,7 @@ button {
 
 .delivery-info {
   position: absolute;
-  right: clamp(25px, 8vw, 120px);
+  left: clamp(25px, 8vw, 120px);
   bottom: 58px;
   z-index: 1;
   display: flex;
@@ -322,7 +318,7 @@ button {
 
 .delivery-item .material-symbols-rounded {
   color: #f1bd45;
-  font-size: 39px;
+  font-size: 60px;
 }
 
 .delivery-item p {
@@ -430,25 +426,31 @@ button {
 }
 
 .category-hero {
-  padding: 66px 24px 55px;
-  color: white;
-  background: linear-gradient(110deg, #7d2718, var(--red));
+  min-height: 200px;
+  padding: 56px 24px 47px;
+  color: var(--ink);
+  background: var(--paper);
   text-align: center;
 }
 
 .category-hero .eyebrow {
-  color: #f4c968;
+  margin-bottom: 13px;
+  color: var(--red);
+  font-size: 10px;
+  line-height: 1;
+  letter-spacing: .22em;
 }
 
 .category-hero h1 {
   margin: 0;
-  font: 600 clamp(40px, 6vw, 58px)/1.1 var(--serif);
+  font: 700 clamp(40px, 5vw, 48px)/1.12 var(--serif);
 }
 
 .category-hero>p:not(.eyebrow) {
-  margin: 12px 0 18px;
-  color: #ffffffd1;
+  margin: 11px 0 0;
+  color: #8a8176;
   font-size: 13px;
+  line-height: 1.5;
 }
 
 .category-menu {
@@ -500,8 +502,9 @@ button {
 }
 
 .product-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 18px;
 }
 
@@ -509,6 +512,7 @@ button {
   position: relative;
   padding: 0.5vw;
   display: flex;
+  flex: 0 1 calc((100% - 54px) / 4);
   min-width: 0;
   flex-direction: column;
   overflow: hidden;
@@ -985,6 +989,10 @@ button {
     gap: 13px;
   }
 
+  .product-card {
+    flex-basis: calc((100% - 26px) / 3);
+  }
+
   .product-image {
     height: 145px;
   }
@@ -1117,6 +1125,10 @@ button {
   .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 11px;
+  }
+
+  .product-card {
+    flex-basis: calc((100% - 11px) / 2);
   }
 
   .product-image {

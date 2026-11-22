@@ -304,7 +304,7 @@ function loadMenu() {
           return;
         }
         categoryTitle.textContent = selectedCategory;
-        categoryDescription.textContent = "Escolha suas delícias favoritas.";
+        categoryDescription.textContent = "Sabores que sempre fazem sucesso por aqui.";
         document.title = `${selectedCategory} | Pizzaria Pagliari`;
         renderMenu();
       } else {
