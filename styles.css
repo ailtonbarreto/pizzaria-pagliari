@@ -1148,11 +1148,11 @@ button {
   }
 
   .product-card {
-    flex-basis: 100%;
+    flex-basis: 88%;
   }
 
   .product-image {
-    height: 175px;
+    height: 210px;
   }
 
   .product-placeholder {
