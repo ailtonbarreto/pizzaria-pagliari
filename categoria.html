@@ -1,80 +1,105 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#b83319">
-    <meta name="description" content="Confira o cardápio da Pizzaria Pagliari.">
-    <title>Cardápio | Pizzaria Pagliari</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0,0" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-    <script defer src="script.js"></script>
-  </head>
-  <body data-page="category">
-    <header class="site-header">
-      <a class="brand" href="index.html" aria-label="Pizzaria Pagliari - início">
-        <img src="./assets/pizza.png" alt="Pizzaria Pagliari">
-        <span class="brand-name">PAGLIARI<span>PIZZARIA</span></span>
-      </a>
-      <nav class="main-nav" id="category-nav" aria-label="Categorias do cardápio"></nav>
-      <div class="header-actions">
 
-        <button class="cart-button" id="open-cart" type="button" aria-label="Abrir sacola">
-          <span class="material-symbols-rounded" aria-hidden="true">shopping_bag</span>
-          <span class="cart-count" id="cart-count">0</span>
-        </button>
-                <button class="menu-toggle" id="menu-toggle" type="button" aria-controls="category-nav" aria-expanded="false" aria-label="Abrir menu">
-          <span class="material-symbols-rounded" aria-hidden="true">menu</span>
-        </button>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#b83319">
+  <meta name="description" content="Confira o cardápio da Pizzaria Pagliari.">
+  <title>Cardápio | Pizzaria Pagliari</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,400,0,0"
+    rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script defer src="script.js"></script>
+</head>
+
+<body data-page="category">
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Pizzaria Pagliari - início">
+      <img src="./assets/pizza.png" alt="Pizzaria Pagliari">
+      <span class="brand-name">PAGLIARI<span>PIZZARIA</span></span>
+    </a>
+    <nav class="main-nav" id="category-nav" aria-label="Categorias do cardápio"></nav>
+    <div class="header-actions">
+
+      <button class="cart-button" id="open-cart" type="button" aria-label="Abrir sacola">
+        <span class="material-symbols-rounded" aria-hidden="true">shopping_bag</span>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+      <button class="menu-toggle" id="menu-toggle" type="button" aria-controls="category-nav" aria-expanded="false"
+        aria-label="Abrir menu">
+        <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="category-hero">
+      <p class="eyebrow">AS QUERIDINHAS DA CASA</p>
+      <h1 id="category-title">Carregando...</h1>
+      <p id="category-description">Sabores que sempre fazem sucesso por aqui.</p>
+    </section>
+    <section class="menu-section category-menu">
+      <div class="menu-tools">
+        <p class="category-results" id="category-results"></p>
+        <label class="search-box">
+          <span class="material-symbols-rounded" aria-hidden="true">search</span>
+          <input id="menu-search" type="search" placeholder="Buscar nesta categoria"
+            aria-label="Buscar nesta categoria">
+        </label>
       </div>
-    </header>
-
-    <main>
-      <section class="category-hero">
-        <p class="eyebrow">AS QUERIDINHAS DA CASA</p>
-        <h1 id="category-title">Carregando...</h1>
-        <p id="category-description">Sabores que sempre fazem sucesso por aqui.</p>
-      </section>
-      <section class="menu-section category-menu">
-        <div class="menu-tools">
-          <p class="category-results" id="category-results"></p>
-          <label class="search-box">
-            <span class="material-symbols-rounded" aria-hidden="true">search</span>
-            <input id="menu-search" type="search" placeholder="Buscar nesta categoria" aria-label="Buscar nesta categoria">
-          </label>
+      <div id="menu-content" aria-live="polite">
+        <div class="loading-state"><span class="loader" aria-hidden="true"></span>
+          <p>Preparando o cardápio...</p>
         </div>
-        <div id="menu-content" aria-live="polite">
-          <div class="loading-state"><span class="loader" aria-hidden="true"></span><p>Preparando o cardápio...</p></div>
-        </div>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <a class="brand footer-brand" href="index.html" aria-label="Pizzaria Pagliari - início">
-        <img src="./assets/pizza.png" alt="Pizzaria Pagliari">
-        <span class="brand-name">PAGLIARI<span>PIZZARIA</span></span>
-      </a>
-      <div class="footer-copy"><p>Feito com carinho, servido quentinho.</p><span>© <span id="current-year"></span> Pizzaria Pagliari</span></div>
-      <a class="back-top material-symbols-rounded" href="#" aria-label="Voltar ao topo">arrow_upward</a>
-    </footer>
-
-    <div class="cart-backdrop" id="cart-backdrop" hidden></div>
-    <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-hidden="true">
-      <div class="cart-header">
-        <div><p class="eyebrow">SEU PEDIDO</p><h2 id="cart-title">Sacola</h2></div>
-        <button class="icon-button material-symbols-rounded" id="close-cart" type="button" aria-label="Fechar sacola">close</button>
       </div>
-      <div class="cart-items" id="cart-items"></div>
-      <div class="cart-footer">
-        <div class="cart-total"><span>Total</span><strong id="cart-total">R$ 0,00</strong></div>
-        <button class="button button-dark checkout-button" id="checkout" type="button" disabled>Continuar pelo WhatsApp <span class="material-symbols-rounded" aria-hidden="true">arrow_outward</span></button>
-        <p class="cart-disclaimer">Seu pedido será enviado para confirmação pelo WhatsApp.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="index.html" aria-label="Pizzaria Pagliari - início">
+      <img src="./assets/pizza.png" alt="Pizzaria Pagliari">
+      <span class="brand-name">PAGLIARI<span>PIZZARIA</span></span>
+    </a>
+    <div class="footer-copy">
+      <p>Feito com carinho, servido quentinho.</p><span>© <span id="current-year"></span> Pizzaria Pagliari</span>
+    </div>
+    <a class="back-top material-symbols-rounded" href="#" aria-label="Voltar ao topo">arrow_upward</a>
+  </footer>
+
+  <div class="cart-backdrop" id="cart-backdrop" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-labelledby="cart-title" aria-hidden="true">
+    <div class="cart-header">
+      <div>
+        <p class="eyebrow">SEU PEDIDO</p>
+        <h2 id="cart-title">Sacola</h2>
       </div>
-    </aside>
-    <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  </body>
+      <button class="icon-button material-symbols-rounded" id="close-cart" type="button"
+        aria-label="Fechar sacola">close</button>
+    </div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-footer">
+      <div class="cart-total"><span>Total</span><strong id="cart-total">R$ 0,00</strong></div>
+      <button class="button button-dark checkout-button" id="checkout" type="button" disabled>Continuar pelo WhatsApp
+        <span class="material-symbols-rounded" aria-hidden="true">arrow_outward</span></button>
+      <p class="cart-disclaimer">Seu pedido será enviado para confirmação pelo WhatsApp.</p>
+    </div>
+  </aside>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script>
+
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.style.overflowX = 'hidden';
+    });
+
+  </script>
+</body>
+
 </html>
