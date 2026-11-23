@@ -1030,6 +1030,10 @@ button {
     padding: 6px 14px 12px;
   }
 
+  .main-nav a {
+    font-size: 14px;
+  }
+
   .cart-button {
     width: 37px;
     height: 37px;
@@ -1106,6 +1110,14 @@ button {
     font-size: 43px;
   }
 
+  .category-hero .eyebrow {
+    font-size: 11px;
+  }
+
+  .category-hero>p:not(.eyebrow) {
+    font-size: 15px;
+  }
+
   .menu-tools {
     align-items: stretch;
     flex-direction: column-reverse;
@@ -1119,20 +1131,28 @@ button {
 
   .search-box {
     width: 100%;
-    height: 42px;
+    height: 46px;
+  }
+
+  .search-box input {
+    font-size: 14px;
+  }
+
+  .category-results {
+    font-size: 14px;
   }
 
   .product-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 11px;
+    grid-template-columns: 1fr;
+    gap: 14px;
   }
 
   .product-card {
-    flex-basis: calc((100% - 11px) / 2);
+    flex-basis: 100%;
   }
 
   .product-image {
-    height: 135px;
+    height: 175px;
   }
 
   .product-placeholder {
@@ -1145,30 +1165,88 @@ button {
   }
 
   .product-info {
-    padding: 12px 10px;
+    padding: 16px 15px;
   }
 
   .product-info h4 {
-    font-size: 12px;
-    line-height: 1.35;
+    font-size: 17px;
+    line-height: 1.3;
   }
 
   .product-description {
-    font-size: 9px;
+    min-height: 44px;
+    font-size: 14px;
+    line-height: 1.55;
   }
 
   .product-bottom {
-    gap: 10px;
-    margin-top: 12px;
+    align-items: center;
+    flex-direction: row;
+    gap: 12px;
+    margin-top: 16px;
   }
 
   .product-price {
-    font-size: 13px;
+    font-size: 16px;
   }
 
   .add-button {
-    min-height: 30px;
-    font-size: 9px;
+    min-height: 40px;
+    padding: 0 13px;
+    font-size: 13px;
+  }
+
+  .add-button .material-symbols-rounded {
+    font-size: 19px;
+  }
+
+  .empty-state,
+  .error-state,
+  .loading-state {
+    font-size: 14px;
+  }
+
+  .loading-state p {
+    font-size: 14px;
+  }
+
+  .cart-empty,
+  .cart-item-name {
+    font-size: 15px;
+  }
+
+  .cart-item-price,
+  .quantity-control span {
+    font-size: 14px;
+  }
+
+  .quantity-control button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .remove-item,
+  .cart-item-note span,
+  .cart-disclaimer {
+    font-size: 12px;
+  }
+
+  .cart-item-note textarea {
+    min-height: 64px;
+    font-size: 14px;
+  }
+
+  .cart-total {
+    font-size: 16px;
+  }
+
+  .cart-total strong {
+    font-size: 20px;
+  }
+
+  .checkout-button {
+    min-height: 52px;
+    font-size: 14px;
   }
 
   .closing-banner {
