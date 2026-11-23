@@ -1012,6 +1012,10 @@ button {
     --header-height: 62px;
   }
 
+  .cart-drawer {
+    width: 100vw;
+  }
+
   .site-header {
     height: var(--header-height);
     padding: 0 14px;
